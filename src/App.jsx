@@ -71,7 +71,7 @@ function App() {
 
   const checkAuthStatus = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:3000/users/current_user', {
+      const res = await fetch('https://api.sonervous.site/users/current_user', {
         credentials: 'include',
       });
       if (res.ok) {
@@ -99,7 +99,7 @@ function App() {
 
   const handleLogout = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:3000/auth/logout', {
+      const res = await fetch('https://api.sonervous.site/auth/logout', {
         method: 'POST',
         credentials: 'include',
       });
