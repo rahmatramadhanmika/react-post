@@ -16,7 +16,7 @@ const PostList = () => {
 
     const fetchPosts = async () => {
         try {
-            let url = `http://localhost:3000/posts?page=${page}&pageSize=${pageSize}`;
+            let url = `https://api.sonervous.site/posts?page=${page}&pageSize=${pageSize}`;
             if (searchKeyword) {
                 url += `&keyword=${encodeURIComponent(searchKeyword)}`;
             }
@@ -42,7 +42,7 @@ const PostList = () => {
 
     const handleCreatePost = async (values) => {
         try {
-            const res = await fetch('http://localhost:3000/posts', {
+            const res = await fetch('https://api.sonervous.site/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const PostList = () => {
 
     const handleDeletePost = async (postId) => {
         try {
-            const res = await fetch(`http://localhost:3000/posts/${postId}`, {
+            const res = await fetch(`https://api.sonervous.site/posts/${postId}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });

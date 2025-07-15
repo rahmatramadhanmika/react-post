@@ -13,7 +13,7 @@ const Login = ({ onLoginSuccess }) => {
 
   const onFinish = async (values) => {
     try {
-      const res = await fetch('http://localhost:3000/auth/login', {
+      const res = await fetch('https://api.sonervous.site/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Login = ({ onLoginSuccess }) => {
 
   const handleGoogleLogin = () => {
     // Redirect the user to your backend's Google OAuth initiation endpoint
-    window.location.href = 'http://localhost:3000/auth/login/google';
+    window.location.href = 'https://api.sonervous.site/auth/login/google';
   };
 
   return (
