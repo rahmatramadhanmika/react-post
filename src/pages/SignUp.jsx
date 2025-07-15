@@ -11,7 +11,7 @@ const Signup = () => {
   const onFinish = async (values) => { // Made function async
     try {
       // Corrected: Change endpoint from /users/signup to /auth/signup
-      const res = await fetch('https://api.sonervous.site/auth/signup', { // Backend signup endpoint
+      const res = await fetch('http://localhost:3000/auth/signup', { // Backend signup endpoint
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values), // Send username, email, password

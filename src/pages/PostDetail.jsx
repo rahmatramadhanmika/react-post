@@ -26,7 +26,7 @@ const PostDetail = () => {
 
   const fetchPost = async () => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}`, {
         credentials: 'include',
       });
       if (!res.ok) {
@@ -51,7 +51,7 @@ const PostDetail = () => {
 
     setLoadingComments(true);
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}/comments?page=${commentsPage}&pageSize=${commentsPageSize}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}/comments?page=${commentsPage}&pageSize=${commentsPageSize}`, {
         credentials: 'include',
       });
       const data = await res.json();
@@ -115,7 +115,7 @@ const PostDetail = () => {
 
   const handleUpdatePost = async (values) => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
@@ -138,7 +138,7 @@ const PostDetail = () => {
 
   const handleDeletePost = async () => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -161,7 +161,7 @@ const PostDetail = () => {
 
   const handleCreateComment = async (values) => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}/comments`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
@@ -188,7 +188,7 @@ const PostDetail = () => {
 
   const handleUpdateComment = async (values) => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}/comments/${isEditingCommentId}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}/comments/${isEditingCommentId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
@@ -214,7 +214,7 @@ const PostDetail = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      const res = await fetch(`https://api.sonervous.site/posts/${postId}/comments/${commentId}`, {
+      const res = await fetch(`http://localhost:3000/posts/${postId}/comments/${commentId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
